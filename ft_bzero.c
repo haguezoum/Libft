@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 15:13:59 by haguezou          #+#    #+#             */
-/*   Updated: 2022/09/30 16:41:05 by haguezou         ###   ########.fr       */
+/*   Created: 2022/09/30 21:50:49 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/01 16:23:54 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-#include<stddef.h>
-size_t	ft_strlen(char *string)
+void	ft_bzero(void *string, size_t n)
 {
-	int i = 0;
-	while (*string)
+	int	i;
+
+	i = 0;
+	while (*(char *)string && i < n)
 	{
-		i++;
+		*(char *)string = '\0';
 		string++;
+		i++;
 	}
-	return i;
 }

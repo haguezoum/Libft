@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 15:13:59 by haguezou          #+#    #+#             */
-/*   Updated: 2022/09/30 16:41:05 by haguezou         ###   ########.fr       */
+/*   Created: 2022/10/01 18:35:57 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/01 21:58:17 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include<stddef.h>
-size_t	ft_strlen(char *string)
+
+void	ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int i = 0;
-	while (*string)
+	while (*(char *)src && n != 0)
 	{
-		i++;
-		string++;
+		*(char *)dest = *(char *)src;
+		dest++;
+		src++;
+		n--;
 	}
-	return i;
+	*(char *)dest = '\0';
 }
