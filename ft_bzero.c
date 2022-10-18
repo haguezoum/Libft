@@ -6,20 +6,17 @@
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 21:50:49 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/01 16:23:54 by haguezou         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:51:22 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *string, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (*(char *)string && i < n)
+	while (n != 0)
 	{
 		*(char *)string = '\0';
+		n--;
 		string++;
-		i++;
 	}
 }

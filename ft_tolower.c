@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 15:13:59 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/05 15:29:54 by haguezou         ###   ########.fr       */
+/*   Created: 2022/10/09 14:31:58 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/16 16:37:01 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t	ft_strlen(char *string)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (*string)
-	{
-		i++;
-		string++;
-	}
-	return (i);
+	if (c >= 'A' && c <= 'Z')
+		return (c +32);
+	return (c);
 }

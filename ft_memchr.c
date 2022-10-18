@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 15:13:59 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/05 15:29:54 by haguezou         ###   ########.fr       */
+/*   Created: 2022/10/11 00:39:44 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/16 17:27:04 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include"libft.h"
 
-size_t	ft_strlen(char *string)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	char	*str;
 
-	i = 0;
-	while (*string)
+	str = (char *)s;
+	while (n--)
 	{
-		i++;
-		string++;
+		if (*str == (char)c)
+		{
+			return (str);
+		}
+		str++;
 	}
-	return (i);
+	return (NULL);
 }

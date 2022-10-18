@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 15:13:59 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/05 15:29:54 by haguezou         ###   ########.fr       */
+/*   Created: 2022/10/14 23:10:16 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/16 16:56:39 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include"libft.h"
 
-size_t	ft_strlen(char *string)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	i;
+	void	*ptr;
 
-	i = 0;
-	while (*string)
-	{
-		i++;
-		string++;
-	}
-	return (i);
+	ptr = malloc(count * size);
+	if (ptr)
+		ft_bzero(ptr, count * size);
+	return (ptr);
 }

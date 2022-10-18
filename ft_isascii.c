@@ -6,11 +6,11 @@
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 12:44:17 by haguezou          #+#    #+#             */
-/*   Updated: 2022/09/30 13:16:24 by haguezou         ###   ########.fr       */
+/*   Updated: 2022/10/09 12:10:49 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 	{

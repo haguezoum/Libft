@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 15:13:59 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/05 15:29:54 by haguezou         ###   ########.fr       */
+/*   Created: 2022/10/15 17:05:01 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/15 19:43:22 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include"libft.h"
 
-size_t	ft_strlen(char *string)
+char	*ft_strdup(const char *str)
 {
-	int	i;
+	size_t	stlen;
+	size_t	size;
+	char	*ptr;
+	size_t	i;
 
+	stlen = ft_strlen((char *)str) + 1;
+	size = sizeof (*((char *) str));
 	i = 0;
-	while (*string)
+	ptr = (char *) ft_calloc(stlen, size);
+	if (ptr == NULL)
+		return (NULL);
+	while (stlen > i)
 	{
+		ptr[i] = (char)str[i];
 		i++;
-		string++;
 	}
-	return (i);
+	return (ptr);
 }

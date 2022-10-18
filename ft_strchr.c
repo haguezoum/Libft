@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 15:13:59 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/05 15:29:54 by haguezou         ###   ########.fr       */
+/*   Created: 2022/10/09 14:34:57 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/16 15:05:07 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include"libft.h"
 
-size_t	ft_strlen(char *string)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (*string)
+	while (*s || *s == (char) c)
 	{
-		i++;
-		string++;
+		if (*s == (char) c)
+		{
+			return ((char *)s);
+		}
+		s++;
 	}
-	return (i);
+	return (NULL);
 }

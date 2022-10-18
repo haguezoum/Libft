@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 15:13:59 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/05 15:29:54 by haguezou         ###   ########.fr       */
+/*   Created: 2022/10/12 20:33:47 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/13 19:00:58 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include"libft.h"
 
-size_t	ft_strlen(char *string)
+char	*ft_strnstr(const char *bigStr, const char *smlStr, size_t len)
 {
-	int	i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (*string)
+	j = 0;
+	if (bigStr == NULL && len == 0)
+		return (NULL);
+	if (smlStr[0] == '\0')
+		return ((char *)bigStr);
+	while (bigStr[i])
 	{
+		while ((smlStr[j] == bigStr[i + j]) && len > i + j)
+		{
+			if (smlStr[j + 1] == '\0')
+				return ((char *)bigStr + i);
+			j++;
+		}
 		i++;
-		string++;
+		j = 0;
 	}
-	return (i);
+	return (NULL);
 }

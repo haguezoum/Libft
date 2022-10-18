@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:35:57 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/07 13:02:15 by haguezou         ###   ########.fr       */
+/*   Created: 2022/10/16 19:38:32 by haguezou          #+#    #+#             */
+/*   Updated: 2022/10/17 15:25:28 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include"libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char				*ptr;
+	unsigned int		i;
 
-	i = n;
-	if (!dest && !src)
+	i = start;
+	if (!s)
+		return (0);
+	if (ft_strlen((char *)s) < len)
+		len = ft_strlen((char *)s) - i;
+	if (i >= ft_strlen((char *)s))
+		return (ft_strdup(""));
+	ptr = (char *)ft_calloc(len + 1, sizeof(*s));
+	if (!ptr)
 	{
 		return (0);
 	}
-	while (n != 0)
+	if (ptr != NULL)
 	{
-		*(char *)dest = *(char *)src;
-		dest++;
-		src++;
-		n--;
+		return ((char *)ft_memmove(ptr, (char *)s + i, len));
 	}
-	return (dest - i);
+	return (NULL);
 }
