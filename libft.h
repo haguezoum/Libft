@@ -6,7 +6,7 @@
 /*   By: haguezou <haguezou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:41:16 by haguezou          #+#    #+#             */
-/*   Updated: 2022/10/18 13:31:50 by haguezou         ###   ########.fr       */
+/*   Updated: 2022/10/18 19:36:07 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);
-size_t	ft_strlen(char *string);
+size_t	ft_strlen(const char *string);
 size_t	ft_strlcat(char *dest, char *src, size_t n);
 void	*ft_memset(void *ptr, int c, size_t len);
 void	ft_bzero(void *string, size_t n);
